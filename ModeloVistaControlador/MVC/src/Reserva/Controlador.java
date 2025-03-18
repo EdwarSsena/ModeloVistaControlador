@@ -1,15 +1,18 @@
 
 package Reserva;
 
+import java.util.Scanner;
 
 public class Controlador {
     private Sala sala;
     private Vista vista;
+    private Scanner scanner;
     
     //Constructor del controlador
     public Controlador (Sala sala, Vista vista){
         this.sala = sala;
         this.vista = vista;
+        this.scanner = new Scanner(System.in);
     }
     //Metodo para registrar la logica de reserva
     public void gestionarReservas(){
@@ -31,7 +34,7 @@ public class Controlador {
                     }
                     break;
                 case 2:
-                    vista.mostrarAsientosOcupados(sala.getAsientosOcupados, sala.getCapacidad());
+                    vista.mostrarAsientosOcupados(sala.getAsientosOcupados(), sala.getCapacidad());
                     break;
                     
                 case 3:
@@ -41,11 +44,9 @@ public class Controlador {
                     System.out.println("Opcion no valida ");
                     break;
             }
-            if(!vista.continuarReservando()){
+            if (!vista.continuarReservando()){
                 break;
             }
         }
     }//ola
-    
-    
 }

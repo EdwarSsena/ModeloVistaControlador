@@ -14,7 +14,7 @@ public class Vista {
         System.out.println("1. Reservar asiento ");
         System.out.println("2. Ver asientos reservados ");
         System.out.println("3. Salir ");
-        
+    }
         //Metodo para pedir numero de asiento
         public int obtenerNumeroAsiento(){
             System.out.println("Ingrese numero de aseinto a reservar ( 0- para Salir):");
@@ -36,11 +36,11 @@ public class Vista {
         }
         
         //Metodo para preguntar si el usuario quiere seguir reservado
-        public void continuarReservado(){
+        public boolean continuarReservado(){
             System.out.println("Desea realizar otra reserva (S/N): ");
-            char respuesta = scanner.next().toUpperCase().charAt(0);
-            return respuesta == "S";
+            String respuesta = scanner.next();
+            return respuesta.equalsIgnoreCase("S");
         }
-        
+
         
     }
